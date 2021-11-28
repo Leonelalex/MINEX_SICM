@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DTOs\**" />
+    <Compile Remove="DTO\AlertDB\**" />
+    <Compile Remove="DTO\Core DTOs\Requests\**" />
+    <Compile Remove="DTO\General DTOs\**" />
+    <EmbeddedResource Remove="DTOs\**" />
+    <EmbeddedResource Remove="DTO\AlertDB\**" />
+    <EmbeddedResource Remove="DTO\Core DTOs\Requests\**" />
+    <EmbeddedResource Remove="DTO\General DTOs\**" />
+    <None Remove="DTOs\**" />
+    <None Remove="DTO\AlertDB\**" />
+    <None Remove="DTO\Core DTOs\Requests\**" />
+    <None Remove="DTO\General DTOs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.7" />
+    <PackageReference Include="MimeKit" Version="2.13.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Email_Templates\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,554 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InterfaceApi</name>
+    </assembly>
+    <members>
+        <member name="M:InterfaceApi.Controllers.ActionsController.Notificar(Core.ServiceApp.DTO.Core_DTOs.Request.NotificarAutoridades_DTO,System.Int32,System.String)">
+            <summary>
+            Envia notificacion vía correo a todas las misisones y correos adicionales ligados a la alerta
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <param name="codAlerta">codigo de la alerta</param>
+            <param name="model">Notificacion a enviar</param>
+            <returns>Un mensaje con el resultado del proceso</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.ActionsController.Avistamiento(Core.ServiceApp.DTO.Core_DTOs.Request.Avistamiento_DTO,System.Int32,System.String)">
+            <summary>
+            Envia una notificacion de avistamiento a todas las misiones y correos adiciones aosciados a alerta
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <param name="codBoletin">codigo del Boletin</param>
+            <param name="model">Avistamiento a enviar</param>
+            <returns>Un mensaje con el resultado del proceso</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.ActionsController.CambioSituacion(Core.ServiceApp.DTO.Core_DTOs.Request.CambioSituacion_DTO,System.Int32,System.String)">
+            <summary>
+            Envia una notificacion de cambio de situacion a todas las misiones y correos adiciones aosciados a alerta
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <param name="codBoletin">codigo del Boletin</param>
+            <param name="model">Avistamiento a enviar</param>
+            <returns>Un mensaje con el resultado del proceso</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.ActionsController.GetUltimasAcciones(Core.ServiceApp.DTO.Core_DTOs.Request.UltimasAcciones_DTO,DataAccess.Helpers.PaginationFilter,System.String)">
+            <summary>
+            Obtiene las ultimas acciones registradas por el tipo de alerta
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <param name="filter">parametros de paginacion</param>
+            <param name="model">filtros de busqueda</param>
+            <returns>Un listado con las ultimas acciones segun los parametros recibidos</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.AlbaKenethController.CrearAlerta(Core.ServiceApp.DTO.Core_DTOs.Request.AlertaAlbaKeneth_DTO,System.String)">
+            <summary>
+            Crea una alerta Alba-Keneth
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <param name="model">Alerta a registrar</param>
+            <returns>Un mensaje con el resultado del proceso y el Id de la alerta registrada</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.AlbaKenethController.GetAll(DataAccess.Helpers.PaginationFilter,System.String)">
+            <summary>
+            Retorna todas alertas Alba-Keneth Paginadas
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <param name="filter">parametros de paginacion</param>
+            <returns>Un listado con las alertas de la pagina recivida</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.AlbaKenethController.GetByFilters(Core.ServiceApp.DTO.Core_DTOs.Request.AlertSearchFilters,DataAccess.Helpers.PaginationFilter,System.String)">
+            <summary>
+            Retorna todas alertas Alba-Keneth Paginadas y filtradas
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <param name="pagefilter">parametros de paginacion</param>
+            <param name="filters">filtros de busqueda</param>
+            <returns>Un listado con las alertas de la pagina luego de filtrarlas</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.AlbaKenethController.GetBitacora(System.Int32,System.String)">
+            <summary>
+            Retorna la bitacora de la Alerta 
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <param name="codAlerta">codigo de la Alerta</param>
+            <returns>Un listado todos los registros de bitacora de la alerta recibida</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.AlbaKenethController.UpdateAlerta(Core.ServiceApp.DTO.Core_DTOs.Request.AlertaAlbaKeneth_DTO,System.Int32,System.String)">
+            <summary>
+            Edita la alerta Alba-Keneth
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <param name="codAlerta">codigo de la Alerta</param>
+            <param name="model">campos de la alerta a editar</param>
+            <returns>Un mensaje con el resultado del proceso</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.AlbaKenethController.DesactivarAlerta(Core.ServiceApp.DTO.Core_DTOs.Request.DesactivarAlerta_AK_DTO,System.Int32,System.String)">
+            <summary>
+            Desactiva la Alerta Alba-Keneth
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <param name="codAlerta">codigo de la Alerta</param>
+            <param name="model">campos de la alerta a editar</param>
+            <returns>Un mensaje con el resultado del proceso</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.AlbaKenethController.UpdateBoletin(Core.ServiceApp.DTO.Core_DTOs.Request.BoletinAK_DTO,System.Int32,System.String)">
+            <summary>
+            Edita el boletin de una alerta Alba-Keneth
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <param name="codBoletin">codigo del Boletin</param>
+            <param name="boletin">campos del boletin a editar</param>
+            <returns>Un mensaje con el resultado del proceso</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.AlbaKenethController.PostBoletin(Core.ServiceApp.DTO.Core_DTOs.Request.BoletinAK_DTO,System.Int32,System.String)">
+            <summary>
+            Agregar un Boletin a la Alerta
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <param name="codAlerta">codigo de la Alerta</param>
+            <param name="boletin">boletin a crear</param>
+            <returns>Un mensaje con el resultado del proceso y el codigo del boletin registrado</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.AlbaKenethController.DeleteBoletin(System.Int32,System.String)">
+            <summary>
+            Elimina un boletin de la Alerta
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <param name="codBoletin">codigo del Boletin</param>
+            <returns>Un mensaje con el resultado del proceso</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.CatalogosController.Catalogos(System.String)">
+            <summary>
+            Retorna todos los catalogos de la aplicacion
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <returns>Un listado con todos los catalogos con sus respectivos registros disponibles</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.CatalogosController.GetSituacion(System.String)">
+            <summary>
+            Retorna todos los registros del catalogo de situacion
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <returns>Un listado con todas las situaciones especiales registradas</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.CatalogosController.PutSituacion(Core.ServiceApp.DTO.Core_DTOs.CatalogoGenerico_DTO,System.Int32,System.String)">
+            <summary>
+            Edita una situacion especial
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <param name="model">campos de situacion especial a actualizar</param>
+            <param name="codSituacion">codigo de la situacion especial</param>
+            <returns>mensaje con el resultado de la operacion</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.CatalogosController.PostSituacion(Core.ServiceApp.DTO.Core_DTOs.CatalogoGenerico_DTO,System.String)">
+            <summary>
+            Crea una nueva situacion especial
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <param name="model">campos de situacion especial nueva</param>
+            <returns>mensaje con el resultado de la operacion y el codigo del la nueva situacion especial registrada</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.CatalogosController.DeleteSituacion(System.Int32,System.String)">
+            <summary>
+            Desactiva una situacion especial
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <param name="codSituacion">codigo de la situacion especial</param>
+            <returns>mensaje con el resultado de la operacion</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.CatalogosController.GetEstatus(System.String)">
+            <summary>
+            Retorna todos los registros del catalogo de estatus
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <returns>listado con todos los registrs del catalogo de estatus</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.CatalogosController.PutEstatus(Core.ServiceApp.DTO.Core_DTOs.CatalogoGenerico_DTO,System.Int32,System.String)">
+            <summary>
+            Edita un registro de estatus
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <param name="model">campos del estatus a actualizar</param>
+            <param name="codEstatus">codigo de estatus</param>
+            <returns>listado con todos los registrs del catalogo de estatus</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.CatalogosController.PostEstatus(Core.ServiceApp.DTO.Core_DTOs.CatalogoGenerico_DTO,System.String)">
+            <summary>
+            Crea un nuevo estatus en el catalogo
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <param name="model">campos del estatus a actualizar</param>
+            <returns>mensaje con el resultado del proceso y el codigo del nuevo registro</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.CatalogosController.DeleteEstatus(System.Int32,System.String)">
+            <summary>
+            Desactiva un registro de estatus
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <param name="codEstatus">codigo de estatus</param>
+            <returns>mensaje del resultado de la ejecucion</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.CatalogosController.GetAccionNotificacion(System.String)">
+            <summary>
+            Retorna todos los registros del catalogo de acciones de notificacion
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <returns>listado con todos los registrs del catalogo de acciones de notificacion</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.CatalogosController.PostAccionNotificacion(Core.ServiceApp.DTO.Core_DTOs.CatalogoGenerico_DTO,System.String)">
+            <summary>
+            Crea una nueva accion de notificacion
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <param name="model">nueva accion de notificacion</param>
+            <returns>mesnaje del resultado del proceso y el nuevo codigo de la accion registrada</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.CatalogosController.PutAccionNotificacion(Core.ServiceApp.DTO.Core_DTOs.CatalogoGenerico_DTO,System.Int32,System.String)">
+            <summary>
+            Edita una accion de notificacion
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <param name="codAccion">codigo de la accion</param>
+            <param name="model">campos a editar</param>
+            <returns>mensaje con el resultado del proceso</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.CatalogosController.DeleteAccionNotificacion(System.Int32,System.String)">
+            <summary>
+            Desactiva una accion de notificacion
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <param name="codAccion">codigo de la accion</param>
+            <returns>mensaje con el resultado del proceso</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.CatalogosController.GetParametrosGenerales(System.String)">
+            <summary>
+            Retorna todos los parametros del sistema
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <returns>listado con los parametros del sistema</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.CatalogosController.PutAccionNotificacion(Core.ServiceApp.DTO.Core_DTOs.Catalogos_DTOS.ParametrosGenerales_DTO,System.Int32,System.String)">
+            <summary>
+            Edita el valor de los parametros del sistema
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <param name="codParam">codigo del parametro</param>
+            <param name="model">campos a editar</param>
+            <returns>mensaje con el resultado del proceso</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.FilesController.SaveAKDoc(System.String)">
+            <summary>
+            Guarda los documentos y oficios de las alertas Alba-Keneth
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <returns>mensaje con el resultado del proceso</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.FilesController.SaveAKFotos(System.String)">
+            <summary>
+            Guarda las fotos y boletines de las alertas Alba-Keneth
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <returns>mensaje con el resultado del proceso</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.FilesController.SaveICDoc(System.String)">
+            <summary>
+            Guarda los documentos y oficios de las alertas Isabel-Claudina
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <returns>mensaje con el resultado del proceso</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.FilesController.SaveICFotos(System.String)">
+            <summary>
+            Guarda las fotos y los boletines de las alertas Isabel-Claudina
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <returns>mensaje con el resultado del proceso</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.IsabelClaudinaController.GetAll(DataAccess.Helpers.PaginationFilter,System.String)">
+            <summary>
+            Retorna todas las alertas Isabel-Claudina
+            </summary>
+            <param name="filter"></param>
+            <param name="SessionToken"></param>
+            <returns>Un listado con todas la alertas</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.IsabelClaudinaController.GetByFilters(Core.ServiceApp.DTO.Core_DTOs.Request.AlertSearchFilters,DataAccess.Helpers.PaginationFilter,System.String)">
+            <summary>
+            Retorna todas las alertas Isabel-Claudina por filtros
+            </summary>
+            <param name="filters"></param>
+            <param name="pagefilter"></param>
+            <param name="SessionToken"></param>
+            <returns>Un listado con todas la alertas</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.IsabelClaudinaController.getBitacora(System.Int32,System.String)">
+            <summary>
+            Retorna La bitacora de una alerta Isabel-Claudina
+            </summary>
+            <param name="codAlerta"></param>
+            <param name="SessionToken"></param>
+            <returns>Un listado de la bitacora de la alerta seleccionada</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.IsabelClaudinaController.registrarAlerta(Core.ServiceApp.DTO.Core_DTOs.Request.AlertaIsabelClaudina_DTO)">
+            <summary>
+            Registra una alerta Isabel-Claudina
+            </summary>
+            <param name="alerta"></param>
+            <returns>Un listado con todas la alertas</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.IsabelClaudinaController.activarAlerta(Core.ServiceApp.DTO.Core_DTOs.Request.Activar_IC_DTO,System.Int32,System.String)">
+            <summary>
+            Activa una alerta Isabel-Claudina
+            </summary>
+            <param name="misiones"></param>
+            <param name="codAlerta"></param>
+            <param name="SessionToken"></param>
+            <returns>Un listado con todas la alertas</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.IsabelClaudinaController.desactiveAlert(Core.ServiceApp.DTO.Core_DTOs.Request.AlertaIsaChangeStatusDTO)">
+            <summary>
+            Desactiva una alerta Isabel-Claudina
+            </summary>
+            <param name="alerta"></param>
+            <returns>Un listado con todas la alertas</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.IsabelClaudinaController.difundir(Core.ServiceApp.DTO.Core_DTOs.Request.DiffusionIC_DTO,System.Int32,System.String)">
+            <summary>
+            Difundir una alerta Isabel-Claudina
+            </summary>
+            <param name="model"></param>
+            <param name="codAlerta"></param>
+            <param name="SessionToken"></param>
+            <returns>Un listado con todas la alertas</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.IsabelClaudinaController.getAlertaSinActivar(DataAccess.Helpers.PaginationFilter,System.String)">
+            <summary>
+            Búsquedas de alerta por activar Isabel-Claudina
+            </summary>
+            <param name="filter"></param>
+            <param name="SessionToken"></param>
+            <returns>Un listado con todas la alertas</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.SearchModuleController.getPersona(Core.ServiceApp.ViewModels.persona_ViewModel,DataAccess.Helpers.PaginationFilter,System.String)">
+            <summary>
+            Busqueda de alertas locales por nommbre y cui de la persona
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <returns>Un listado con las alertas que coincidan con los datos de busqueda recividos</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+        <member name="M:InterfaceApi.Controllers.SearchModuleController.getalerta(System.String,System.String)">
+            <summary>
+            Busqueda de persona por codigo de alerta
+            </summary>
+            <param name="SessionToken">Token de sesion</param>
+            <param name="codAlerta">Codigo de alerta a buscar</param>
+            <returns>Retorna el registro que coincida con el codigo de la alerta recivido</returns>
+            <response code="200">Ejecucion exitosa</response>
+            <response code="400">Request erroneo</response>
+            <response code="401">Sesion expirada</response>
+            <response code="403">No autorizado</response>
+            <response code="500">Error al ejecutar</response>
+        </member>
+    </members>
+</doc>
